@@ -4,25 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial Collection</title>
+    <title>Exercise 3-Holy Grail</title>
     <style>
         * {
-            background-color: black;
-            margin: 30px;
+            margin: 0;
+            padding: 0;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        p {
-            font-family: Arial, Helvetica, sans-serif;
-            color: whitesmoke;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: 60px 1fr 60px;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+
+        header {
+            background-color: #c9c9c9;
+            grid-area: 1/1/2/9;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-Items: center;
+            color: black;
+            font-size: 16px;
+            font-family: "D-DIN Condensed", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-bottom: 2px solid black;
+        }
+
+        .grid-item-left {
+            background-color: #c9c9c9;
+            grid-row: span 1;
+            grid-column: span 2;
+            padding: 20px;
+            border-right: dashed darkgray;
+            overflow-y: scroll;
+        }
+
+        .grid-item-middle {
+            background-color: #c9c9c9;
+            grid-row: span 1;
+            grid-column: span 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item-right {
+            background-color: rgb(0, 0, 0);
+            grid-row: span 1;
+            grid-column: span 0;
+            padding: 10px;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: #c9c9c9;
+            grid-area: 3/1/4/9;
+            border-top: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-img-container {
+            /* the center grid in grid-middle */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            /* Space between grid items */
+            width: 70%;
+            /* Fixed width for the grid */
+            height: 70%;
+            /* Fixed height for the grid */
+            border: 5px dashed rgb(144, 144, 144);
+        }
+
+        .grid-item {
+            /* 6 blocks for images in the grid-img-container */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            /*not sure what this is?*/
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /*no stretching images*/
+        }
+
+        #two {
+            display: none;
+            /* Initially hide the second image */
+        }
+
+        .image-container:hover #one {
+            display: none;
+            /* Hide the first image on hover */
+        }
+
+        .image-container:hover #two {
+            display: block;
+            /* Show the second image on hover */
+        }
+
+        h2 {
+            font-family: "Freight Text", Tahoma, Geneva, Verdana, sans-serif;
         }
 
         a:link {
-            color: whitesmoke;
+            color: rgb(120, 46, 169);
             text-decoration: underline;
+
         }
 
         a:visited {
@@ -31,123 +148,125 @@
         }
 
         a:hover {
-            color: rgb(239, 243, 18);
-            background-color: rgb(24, 17, 122);
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
             text-decoration: underline;
+            font-size: 30px;
         }
 
-        .con {
-            width: 60%;
-            height: 60%;
-            padding: 10px;
-            display: flex;
-            flex-direction: row;
+        input {
+            margin: 0.4rem;
         }
 
-        .contents {
-            width: 90vw;
-            border-style:dotted;
-            border-color: whitesmoke;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
+        .footer-animation{
+            background-color: none;
+            animation: move 2s infinite;
         }
 
-        .a {
-            width:30vw;
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(100px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
         }
 
-        img {
-            width: 130px;
-            height: 80%;
-        }
+
     </style>
 </head>
 
-
-
-
-
 <body>
-    <div class="con">
-        <h1> My Homework Background Sound Collection </h1>
-        <h4>Hello! This is a website where I collect things to listen to while I work. They're mostly game music,
-            youtube stremes, TV series, band albums. I hope it
-            can help me be more organized and possibly help you in the meantime.</h4>
+
+    <div class="grid-container">
+        <header>
+            <p>FURNITURE CREATURES</p>
+            <p>Annotated Bibliography</p>
+            <p>Stories</p>
+            <p>Objects</p>
+        </header>
+
+        <div class="grid-item-left">
+            <h2 style="margin-top: 20px; margin-bottom: 20px;">Annotated Bibliography</h2>
+
+            <h3 style="margin: 10px;">RELATIONSHIP</h3>
+            <p>R.Input 3: 断捨離</p>
+            <p>R.Input 25: Alexa</p>
+            <p>R.Input 24: Taking Things Seriously</p>
+            <p>R.Input 11: Build A Bear</p>
+
+            <h3 style="margin: 10px;">CHARACTER</h3>
+            <p>C.Input 26: Vacuum Cleaner Research</p>
+            <p>C.Input 2: en-nendo</p>
+            <p>C.Input 4: Concept Bathtub</p>
+            <p>C.Input 7: Hello Kitty Wiki</p>
+
+            <h3 style="margin: 10px;">NARRATIVE</h3>
+            <p>N.Input 27: あ</p>
+            <p>N.Input 29: Pareidolia</p>
+            <p>N.Input 5: Genshin Impact</p>
+            <p>N.Input 21: Memes, Funny short videos</p>
+
+        </div>
+
+
+        <div class="grid-item-middle">
+            <div class="grid-img-container">
+                <div class="grid-item image-container">
+                    <img id='one' src='images-for-ex3\chair1.jpg'>
+                    <img id='two' src='images-for-ex3\chair8.jpg'>
+                </div>
+                <div class="grid-item image-container">
+                    <img id='one' src='images-for-ex3\chair1.jpg'>
+                    <img id='two' src='images-for-ex3\chair2.jpg'>
+                </div>
+                <div class="grid-item image-container">
+                    <img id='one' src='images-for-ex3\chair1.jpg'>
+                    <img id='two' src='images-for-ex3\chair3.jpg'>
+                </div>
+                <div class="grid-item image-container">
+                    <img id='one' src='images-for-ex3\chair1.jpg'>
+                    <img id='two' src='images-for-ex3\chair4.jpg'>
+                </div>
+                <div class="grid-item image-container">
+                    <img id='one' src='images-for-ex3\chair1.jpg'>
+                    <img id='two' src='images-for-ex3\chair5.jpg'>
+                </div>
+                <div class="grid-item image-container">
+                    <img id='one' src='images-for-ex3\chair1.jpg'>
+                    <img id='two' src='images-for-ex3\chair6.jpg'>
+                </div>
+            </div>
+            <br>
+            <h3><a href="https://hyjreesepfo.cargo.site/2-8-The-Furniture-Creatures-Animation" target="_blank">Check Out
+                    My Video Here!</a></h4>
+        </div>
+
+        <div class="grid-item-right">
+            <div>
+                <input type="checkbox" id="scales" name="Stupidity" checked />
+                <label for="scales">30% Stupidity</label>
+            </div>
+            <div>
+                <input type="checkbox" id="scales" name="Sturdy" checked />
+                <label for="scales">30% Sturdy</label>
+            </div>
+            <div>
+                <input type="checkbox" id="scales" name="Sentiment" checked />
+                <label for="scales">40% Sentiment</label>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-animation">Reese's Thesis Website 2023-2024 (Maybe)</div>
+        </footer>
     </div>
 
-
-    <h2>Game Musics</h2>
-    <div class="contents">
-        <div class="a">
-            <h3>Arknights</h3>
-            <div><img src="images-for-bgms\ark1.png" alt="arc1"></div>
-            <p><a href="https://www.bilibili.com/video/BV15b411u7iZ/?p=2&vd_source=59bed400bf7c38945d9ffad319e7a018"
-                    target="_blank">Arknights Collection 1</a></p>
-            <div><img src="images-for-bgms\ark2.png" alt="arc2"></div>
-            <p><a href="https://www.bilibili.com/video/BV1uL4y1L78d/?spm_id_from=333.788.video.desc.click"
-                    target="_blank">Arknights Collection 2</a></p>
-            <div><img src="images-for-bgms\ark3.png" alt="arc3"></div>
-            <p><a href="https://monster-siren.hypergryph.com/" target="_blank">Monster-siren official</a></p>
-        </div>
-
-
-
-        <div class="a">
-            <h3>Genshin Impact</h3>
-            <div><img src="images-for-bgms\genshin1.png" alt="genshin1"></div>
-            <p><a href="https://www.bilibili.com/video/BV1nS4y1x7Ao?p=98&vd_source=59bed400bf7c38945d9ffad319e7a018
-            " target="_blank">Genshin OST</a></p>
-            <div><img src="images-for-bgms\genshin2.jpg" alt="genshin2"></div>
-            <p><a href="https://www.bilibili.com/video/BV1Rj411p7b1/?spm_id_from=333.788.recommend_more_video.3&vd_source=59bed400bf7c38945d9ffad319e7a018
-            " target="_blank"> Genshin Concert Shanghai</a></p>
-            <div><img src="images-for-bgms\genshin3.png" alt="genshin3"></div>
-            <p><a href="https://space.bilibili.com/381690688/channel/collectiondetail?sid=951912
-            " target="_blank"> Marco listens to genshin music</a></p>
-        </div>
-
-
-
-        <div class="a">
-            <h3>Star Rail</h3>
-            <div><img src="images-for-bgms\star rail1.png" alt="Star rail1"></div>
-            <p><a href="https://www.bilibili.com/video/BV17M41157NR?p=33" target="_blank">Star Rail OST</a></p>
-            <div><img src="images-for-bgms\star rail2.png" alt="Star rail2"></div>
-            <p><a href="https://www.bilibili.com/video/BV1oz4y147y6/?p=2&spm_id_from=pageDriver&vd_source=59bed400bf7c38945d9ffad319e7a018"
-                    target="_blank">罗浮OST</a> </p>
-        </div>
-
-
-
-        <div>
-            <h3>Persona 5</h3>
-            <div><img src="images-for-bgms\p5.png" alt="p5"></div>
-            <p><a href="https://www.youtube.com/playlist?list=PLZuZrScKjWOMAEEBEGTmAGtmmlg6QY7bC
-        " target="_blank"> Persona 5 OST</a> </p>
-        </div>
-        <div class="line"></div>
-    </div>
-
-
-    <h2>One's with people talking</h2>
-    <div class="contents">
-        <div>
-            <h3>Youtube Videos </h3>
-            <div><img src="images-for-bgms\va.png" alt="va"></div>
-            <p><a href="https://www.youtube.com/watch?v=g2sGQQ2Ob_Y&list=RDCMUC-u7EEXGnYcNwScaNmNefvA&start_radio=1&rv=g2sGQQ2Ob_Y&t=0
-        " target="_blank"> Voice actors play among us</a> </p>
-        </div>
-
-
-
-        <div>
-            <h3>TV Series</h3>
-            <div><img src="images-for-bgms\friends.png" alt="friends"></div>
-            <p><a href="https://www.yfsp.tv/play/wrlCCYxU6pF" target="_blank"> Friends</a></p>
-        </div>
-    </div>
-
-<p>Continue updating...</p>
 
 </body>
 
